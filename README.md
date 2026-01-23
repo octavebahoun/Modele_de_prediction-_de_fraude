@@ -5,7 +5,7 @@ Ce projet vise à identifier les transactions frauduleuses en utilisant des tech
 ## Structure du Projet
 
 - **data/** : Contient les jeux de données (CSV).
-- **notebooks/** : Notebooks Jupyter pour l'exploration des données et l'entraînement des modèles.
+- **notebooks/** : Code python pour l'exploration des données et l'entraînement des modèles.
 - **models/** : Modèles entraînés sauvegardés (format .joblib).
 - **outputs/** : Visualisations et graphiques générés (matrices de confusion, importance des variables).
 - **presentation/** : Support de présentation final.
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ## Utilisation
 
-Pour lancer ton script avec l'environnement virtuel :
+Pour lancer le script avec l'environnement virtuel :
 
 ```bash
 ./venv/bin/python notebooks/fraude_prediction.py
