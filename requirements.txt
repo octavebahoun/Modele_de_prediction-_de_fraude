@@ -6,3 +6,6 @@ seaborn
 joblib
 streamlit
 pillow
+uv
+altair<5
+
