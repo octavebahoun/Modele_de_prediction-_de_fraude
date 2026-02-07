@@ -1,33 +1,52 @@
-# Projet de Détection de Fraude
+# Modèle de Détection de Fraude — Synthèse pour réunion
 
-Ce projet vise à identifier les transactions frauduleuses en utilisant des techniques d'apprentissage automatique.
+## Objectif métier
 
-## Structure du Projet
+Détecter automatiquement les transactions suspectes afin de **réduire les pertes financières** et **prioriser les contrôles** humains.
 
-- **data/** : Contient les jeux de données (CSV).
-- **notebooks/** : Code python pour l'exploration des données et l'entraînement des modèles.
-- **models/** : Modèles entraînés sauvegardés (format .joblib).
-- **outputs/** : Visualisations et graphiques générés (matrices de confusion, importance des variables).
-- **presentation/** : Support de présentation final.
-- **requirements.txt** : Liste des dépendances Python.
+## Ce que fait le modèle
 
-## Installation
+- **Prédit** si une transaction est frauduleuse ou non.
+- **Classe** les transactions par niveau de risque.
+- **Explique** les facteurs les plus influents (importance des variables).
 
-```bash
-# Créer l'environnement virtuel (déjà fait)
-python3 -m venv venv
+## Données utilisées
 
-# Activer l'environnement virtuel
-source venv/bin/activate
+- Jeu de données tabulaire (CSV) stocké dans [data/](data/).
+- Variables de type montant, fréquence, historique, comportement, etc.
+- Nettoyage et préparation effectués dans les scripts de [notebooks/](notebooks/).
 
-# Installer les dépendances (déjà fait)
-pip install -r requirements.txt
-```
+## Approche technique (résumé)
 
-## Utilisation
+- Modèle principal : **Random Forest**.
+- Entraînement et sauvegarde dans [models/](models/).
+- Évaluation via **matrice de confusion** et **importance des variables** (sorties dans [outputs/](outputs/)).
 
-Pour lancer le script avec l'environnement virtuel :
+## Résultats clés (à présenter)
+
+- **Performance globale** : précision, rappel, F1.
+- **Priorisation des alertes** : top transactions à vérifier.
+- **Variables les plus discriminantes** : top 5–10.
+
+## Démo rapide (optionnel)
+
+Pour exécuter la prédiction sur un exemple local :
 
 ```bash
 ./venv/bin/python notebooks/fraude_prediction.py
 ```
+
+## Structure du projet
+
+- [data/](data/) : jeux de données (CSV).
+- [notebooks/](notebooks/) : scripts d’exploration et d’entraînement.
+- [models/](models/) : modèles entraînés (.joblib).
+- [outputs/](outputs/) : graphiques et résultats.
+- [presentation/](presentation/) : support final.
+- [requirements.txt](requirements.txt) : dépendances Python.
+
+## Prochaines étapes proposées
+
+- Ajuster le **seuil d’alerte** selon la capacité opérationnelle.
+- Ajouter un **monitoring** de performance en production.
+- Mettre en place un **retraining** périodique.
